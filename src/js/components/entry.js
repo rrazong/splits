@@ -15,7 +15,8 @@ export default class Entry extends React.Component {
         // TODO: Save entry to database
         console.log(values);
 
-        // TODO: Add entry to Entries table
+        //Add entry to Entries table
+        this.props.addEntry(values);
 
         // TODO: Set Everyone checkbox to checked, all others to un-checked
         $('#everyone').prop('checked', true);
@@ -41,5 +42,3 @@ export default class Entry extends React.Component {
         );
     }
 }
-
-
