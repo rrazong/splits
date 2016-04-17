@@ -3,6 +3,7 @@ import Entries from "./Entries";
 import Entry from "./Entry";
 import Footer from "./Footer";
 import Header from "./Header";
+import Payments from "./Payments";
 
 export default class Layout extends React.Component {
     constructor() {
@@ -15,17 +16,18 @@ export default class Layout extends React.Component {
 
     addEntry(entry) {
         this.state.entries.push(entry);
-        this.setState();
+        this.forceUpdate();
     }
 
     render() {
-        return(
+        return (
             <div>
                 <Header/>
                 <Entry addEntry={this.addEntry.bind(this)}/>
                 <Entries entries={this.state.entries}/>
+                <Payments entries={this.state.entries}/>
                 <Footer/>
             </div>
-        );
+        )
     }
 }
